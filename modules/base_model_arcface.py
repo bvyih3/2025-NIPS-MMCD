@@ -72,7 +72,7 @@ class ArcMarginProduct(nn.Module):
         self.difficultyModel = DifficultyModel(args.datasetSize, out_features, args)
         # self.temp = config.temp
 
-    def forward(self, input, cosine, mod_mg, m, epoch, label, args):
+    def forward(self, input, mod_mg, m, epoch, label, args):
         cosine = F.linear(F.normalize(input), F.normalize(self.weight))
 
         if self.training is False:
